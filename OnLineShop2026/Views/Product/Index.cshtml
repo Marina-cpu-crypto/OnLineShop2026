@@ -1,8 +1,11 @@
-﻿@{
+﻿@model Product
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Товар</h1>
-    <p>инфа о товаре</p>
+    <h3>@Model.Name</h3>
+    <p>@Model.Description</p>
+    <p><b>@Model.Cost</b> р.</p>
 </div>
