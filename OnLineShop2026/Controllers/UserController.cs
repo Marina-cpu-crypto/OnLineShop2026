@@ -12,14 +12,16 @@ namespace OnLineShop2026.Controllers
         {
             this.userRepository = userRepository;
         }
+        public IActionResult Index(Guid id)
+        {
+            //User user = new User("Пользователь", "Первый", "example@email");
+            var user = userRepository.TryGetById(id);
+            return View(user);
+        }
         public IActionResult Catalog()
         {
             var users = userRepository.GetAll();
             return View(users);
-
-            //User user = new User("Пользователь", "Первый", "example@email");
-            ////var user = userRepository.TryGetById(id);
-            //return View(user);
         }
     }
 }
